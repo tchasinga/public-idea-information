@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function tickets() {
   return (
-    <div>tickets</div>
+    <div>this is my tikects pages now</div>
   )
 }
