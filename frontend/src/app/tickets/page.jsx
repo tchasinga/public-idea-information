@@ -1,20 +1,20 @@
-import { Suspense } from 'react'
-import TicketList from './TicketList'
-import loading from '../loading.jsx'
+import { Suspense } from 'react';
+import TicketList from './TicketList';
+import Loading from '../loading'; // Assuming 'loading' is a default export
 
-export default function tickets() {
+export default function Tickets() {
   return (
-     <main>
-        <nav>
-            <div>
-                 <h2>Tickets</h2>
-                 <p><small>Currently open tickets</small></p>
-            </div>
-        </nav>
+    <main>
+      <nav>
+        <div>
+          <h2>Tickets</h2>
+          <p><small>Currently open tickets</small></p>
+        </div>
+      </nav>
 
-        <Suspense fallback={<loading />}>
+      <Suspense fallback={<Loading />}>
         <TicketList />
-        </Suspense>
-     </main>
-  )
+      </Suspense>
+    </main>
+  );
 }
