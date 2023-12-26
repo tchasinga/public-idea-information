@@ -1,32 +1,20 @@
 const Ticket = require('../models/tickets.model.js');
 
 // Create and Save a new Ticket
-  const createTickets = (req, res) => {
-    // Validate request
-    if (!req.body.title || !req.body.body || !req.body.priority || !req.body.user_email) {
-        return res.status(400).send({
-            message: "Ticket content can not be empty"
+  const createTickets = async (req, res) => {
+    try {
+        const ticketsCreater = await Ticket.create(req.body);
+        res.status(201).json({
+          success: true,
+          data: ticketsCreater,
+          message: "Create ticketsCreater successfully",
         });
-    }
-
-    // Create a Ticket
-    const ticket = new Ticket({
-        title: req.body.title,
-        body: req.body.body,
-        priority: req.body.priority,
-        user_email: req.body.user_email
-    });
-
-    // Save Ticket in the database
-    ticket.save()
-        .then(data => {
-            res.send(data);
-        }).catch(err => {
-            res.status(500).send({
-                success: false,
-                message: err.message || "Some error occurred while creating the Ticket."
-            });
+      } catch (error) {
+        res.status(400).json({
+          success: false,
+          message: error.message || "Failed to create ticketsCreater table",
         });
+      }
 };
 
 // Retrieve and return all tickets from the database.
