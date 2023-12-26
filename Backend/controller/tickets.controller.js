@@ -30,7 +30,7 @@ const Ticket = require('../models/tickets.model.js');
 };
 
 // Retrieve and return all tickets from the database.
-exports.findAllTickets = (req, res) => {
+  const findAllTickets = (req, res) => {
     Ticket.find()
         .then(tickets => {
             res.send(tickets);

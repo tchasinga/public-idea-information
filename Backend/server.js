@@ -2,6 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const mongoose = require('mongoose');
 const cors = require('cors');
+const myticketRoutes = require('./routes/tickets.route.js');
 
 // Applying app express
 const app = express();
@@ -44,3 +45,4 @@ mongoose
   });
 
 // Adding APIs routes to the app...
+app.use('/api', myticketRoutes);
