@@ -31,8 +31,15 @@ const Ticket = require('../models/tickets.model.js');
 };
 
 // Find a single ticket with a ticketId
-
+const  findOneTickect = async (req, res, next) => {
+    try {
+      const ticketsGet = await Ticket.findById(req.params.id);
+      return res.status(200).json(ticketsGet);
+    } catch (error) {
+      next(error);
+    }
+ }
 
 
 // adding an export method
-module.exports = { createTickets, findAllTickets };
+module.exports = { createTickets, findAllTickets , findOneTickect};
