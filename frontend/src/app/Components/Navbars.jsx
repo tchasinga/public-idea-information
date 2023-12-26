@@ -1,14 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "./dojo-logo.png";
 
-export default function Navbars() {
+export default function Navbar() {
   return (
-    <nav className="">
-      <Link href="/">
-        <h1>jack navigation</h1>
-      </Link>
-      <Link href="/tickets">
-        <h1>Tickets</h1>
-      </Link>
+    <nav>
+      <Image
+        src={Logo}
+        alt="Dojo Helpdesk logo"
+        width={70}
+        placeholder="empty"
+        quality={100}
+      />
+      <h1>Jack dashaboad</h1>
+      <Link href="/">Dashboard</Link>
+      <Link href="/tickets">Tickets</Link>
     </nav>
   );
 }
