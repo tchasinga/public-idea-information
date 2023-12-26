@@ -20,6 +20,13 @@ p > a {
   @apply text-primary underline;
 }
 
+.Success {
+  position: relative;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* nav styles */
 nav {
   @apply
