@@ -1,12 +1,10 @@
-async function getTicket(id) {
+async function getTicket(_id) {
     try {
-      const res = await fetch(`http://localhost:5000/api/getId/$`, {
-        next: {
-          revalidate: 0
-        }
-      });
-  
-
+        const res = await fetch(`http://localhost:5000/api/getId/${_id}`, {
+            next: {
+                revalidate: 0 // use 0 to opt out of using cache which means that refetch data 
+              }
+        });
       return res.json();
     } catch (error) {
       console.error('Error fetching ticket:', error);
@@ -19,20 +17,24 @@ async function getTicket(id) {
     const ticket = await getTicket(params.id);
   
     return (
-      <main>
-        <nav>
-          <h2>Ticket Details</h2>
-        </nav>
-        <div className="card">
-          <h3>{ticket.title}</h3>
-          <small>Created by {ticket.user_email}</small>
-          <p>{ticket.body}</p>
-          <div className={`pill ${ticket.priority}`}>
-            {ticket.priority} priority
-          </div>
-          <p>ID: {ticket._id}</p> {/* Accessing the _id property */}
-        </div>
-      </main>
-    );
+        <main>
+          <nav>
+            <h2>Ticket Details</h2>
+          </nav>
+          {ticket ? (
+            <div className="card">
+              <h3>{ticket.title}</h3>
+              <small>Created by {ticket.user_email}</small>
+              <p>{ticket.body}</p>
+              <div className={`pill ${ticket.priority}`}>
+                {ticket.priority} priority
+              </div>
+            </div>
+          ) : (
+            <p>Loading...</p>
+          )}
+        </main>
+      );
+      
   }
   
