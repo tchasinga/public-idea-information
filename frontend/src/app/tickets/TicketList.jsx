@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { resolve } from "styled-jsx/css";
 
 
 async function getTickets() {
+  await new Promise(resolve => setTimeout(resolve, 5000))
   const res = await fetch("http://localhost:5000/api/all", {
     next: {
       revalidate: 0, // use 0 to opt out of using cache which means that refetch data
@@ -25,7 +27,7 @@ export default async function TicketList() {
               {ticket.priority} priority
             </div>
           </div>
-        </Link>
+        </Link> 
       ))}
       {tickets.length === 0 && (
         <p className="text-center">There are no open tickets, yay!</p>
