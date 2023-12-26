@@ -1,21 +1,11 @@
 import { notFound } from "next/navigation"
 
-export const dynamicParams = true // default val = true
 
-export async function generateStaticParams() {
-  const res = await fetch('http://localhost:4000/tickets')
-
-  const tickets = await res.json()
- 
-  return tickets.map((ticket) => ({
-    id: ticket.id
-  }))
-}
 
 async function getTicket(id) {
-  const res = await fetch(`http://localhost:4000/tickets/${id}`, {
+  const res = await fetch(`http://localhost:5000/api/getId/${id}`, {
     next: {
-      revalidate: 60
+      revalidate: 0 // use 0 to opt out of using cache
     }
   })
 
