@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import Logo from "./dojo-logo.png";
+
 
 export default function Navbar() {
   return (
