@@ -5,13 +5,6 @@ import Logo from "./dojo-logo.png";
 export default function Navbar() {
   return (
     <nav>
-      <Image
-        src={Logo}
-        alt="Dojo Helpdesk logo"
-        width={70}
-        placeholder="empty"
-        quality={100}
-      />
       <h1>Jack dashaboad</h1>
       <Link href="/">Dashboard</Link>
       <Link href="/tickets">Tickets</Link>
