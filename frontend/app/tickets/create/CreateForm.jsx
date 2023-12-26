@@ -1,4 +1,5 @@
-"use client";
+"use client"
+
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
@@ -14,9 +15,9 @@ export default function CreateForm() {
     e.preventDefault()
     setIsLoading(true)
 
-    const newTicket = { title, body, priority, user_email: 'tchasingajacques.dev' }
+    const newTicket = { title, body, priority, user_email: 'mario@netninja.dev' }
 
-    const res = await fetch('http://localhost:5000/api/creating', {
+    const res = await fetch('http://localhost:4000/tickets', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(newTicket)
@@ -41,7 +42,7 @@ export default function CreateForm() {
         />
       </label>
       <label>
-        <span>Body:</span> {/* Corrected label from "Title" to "Body" */}
+        <span>Title:</span>
         <textarea
           required
           onChange={(e) => setBody(e.target.value)}
@@ -63,7 +64,8 @@ export default function CreateForm() {
         className="btn-primary" 
         disabled={isLoading}
       >
-      {isLoading ? <span>Adding...</span> : <span>Add Ticket</span>}
+      {isLoading && <span>Adding...</span>}
+      {!isLoading && <span>Add Ticket</span>}
     </button>
     </form>
   )
