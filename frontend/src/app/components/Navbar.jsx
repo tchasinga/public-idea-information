@@ -7,7 +7,6 @@ export default function Navbar() {
    
       <h1>Get info</h1>
       <Link href="/">Dashboard</Link>
-      <Link href="/tickets">Tickets</Link>
     </nav>
   )
 }
