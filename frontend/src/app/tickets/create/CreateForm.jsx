@@ -17,11 +17,17 @@ export default function CreateForm() {
 
     const newTicket = { title, body, priority, user_email: 'mario@netninja.dev' }
 
-    const res = await fetch('http://localhost:5000/api/creating', {
+    const res =await fetch('http://localhost:5000/api/creating', {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(newTicket)
-    })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newTicket),
+    });
+
+    if (!res.ok) {
+      console.error('Failed to fetch:', res.statusText);
+    } else {
+      console.log('Success.....');
+    }
 
     if (res.status === 201) {
       router.refresh()
