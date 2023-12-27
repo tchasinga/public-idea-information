@@ -22,7 +22,7 @@ export default function CreateForm() {
       user_email: "mario@netninja.dev",
     };
 
-    const res = await fetch("http://localhost:5000/api/creating", {
+    const res = await fetch("https://public-api-information.onrender.com/api/creating", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTicket),

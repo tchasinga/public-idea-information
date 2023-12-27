@@ -2,7 +2,7 @@ import Link from "next/link"
 
 async function getTickets() {
     await new Promise(resolve => setTimeout(resolve, 5000))
-  const res = await fetch('http://localhost:5000/api/all', {
+  const res = await fetch('https://public-api-information.onrender.com/api/all', {
     next: {
       revalidate: 0 // use 0 to opt out of using cache
     }

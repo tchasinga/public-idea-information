@@ -1,7 +1,7 @@
 async function getTicket(_id) {
     try {
         await new Promise(resolve => setTimeout(resolve, 5000))
-        const res = await fetch(`http://localhost:5000/api/getId/${_id}`, {
+        const res = await fetch(`https://public-api-information.onrender.com/api/getId/${_id}`, {
             next: {
                 revalidate: 0 // use 0 to opt out of using cache which means that refetch data 
               }
