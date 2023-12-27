@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import TicketList from './TickectList'
+import Loading from './loading'
+import Link from 'next/link'
 
 export default function Tickets() {
     return (
@@ -9,11 +11,13 @@ export default function Tickets() {
               <h2>Tickets</h2>
               <p><small>Currently open tickets.</small></p>
             </div>
-            {/* <Link href="/tickets/create" className="ml-auto">
+            <Link href="/tickets/create" className="ml-auto">
               <button className="btn-primary">New Ticket</button>
-            </Link> */}
+            </Link>
           </nav>
+          <Suspense fallback={<Loading />}>
             <TicketList />
+            </Suspense>
         </main>
       )
 }

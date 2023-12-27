@@ -6,7 +6,6 @@ const router = express.Router();
 // Create a new Ticket
 router.post('/creating', createTickets);
 router.get('/all', findAllTickets);
-// Corrected route definition
 router.get('/getId/:id', findOneTickect);
 
 
