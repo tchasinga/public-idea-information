@@ -24,7 +24,7 @@ app.use((err, req, res, next) => {
 // Middlewares to allow CORS,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 app.use(
   cors({
-    origin: 'https://gleaming-sundae-7ae1f3.netlify.app', 
+    origin: 'https:localhost:3000', 
     credentials: true,
   })
 );

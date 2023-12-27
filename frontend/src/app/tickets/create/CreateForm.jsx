@@ -17,7 +17,7 @@ export default function CreateForm() {
 
     const newTicket = { title, body, priority, user_email: 'mario@netninja.dev' }
 
-    const res = await fetch('https://public-information-api.onrender.com/api/creating', {
+    const res = await fetch('http://localhost:5000/api/creating', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(newTicket)
