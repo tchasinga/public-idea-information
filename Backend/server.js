@@ -21,7 +21,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Middlewares to allow CORS
+// Middlewares to allow CORS,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 app.use(
   cors({
     origin: 'https://polite-crepe-fb4d64.netlify.app', 
