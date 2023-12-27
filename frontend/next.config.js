@@ -3,7 +3,7 @@ const nextConfig = {
   distDir : '.next',
   reactStrictMode: true,
   images: {
-    domains: ['https://papaya-pothos-9daf92.netlify.app/'],
+    domains: ['https://papaya-pothos-9daf92.netlify.app'],
   },
 }
   
