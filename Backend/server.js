@@ -24,7 +24,7 @@ app.use((err, req, res, next) => {
 // Middlewares to allow CORS
 app.use(
   cors({
-    origin: 'http://localhost:3000', 
+    origin: 'https://public-ideas-information.onrender.com', 
     credentials: true,
   })
 );
