@@ -24,7 +24,7 @@ app.use((err, req, res, next) => {
 // Middlewares to allow CORS,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 app.use(
   cors({
-    origin: 'http://localhost:3000', 
+    origin: 'https://papaya-pothos-9daf92.netlify.app', 
     credentials: true,
   })
 );
