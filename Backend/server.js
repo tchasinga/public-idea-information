@@ -24,7 +24,10 @@ app.use((err, req, res, next) => {
 // Middlewares to allow CORS..................................
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: [
+      'http://localhost:3000',
+      'https://dulcet-tarsier-2d83c9.netlify.app'
+    ],
     credentials: true,
   })
 );
