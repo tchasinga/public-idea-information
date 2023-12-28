@@ -26,7 +26,7 @@ app.use(
   cors({
     origin: [
       'http://localhost:3000',
-      'https://dulcet-tarsier-2d83c9.netlify.app'
+      'https://public-information.netlify.app'
     ],
     credentials: true,
   })
