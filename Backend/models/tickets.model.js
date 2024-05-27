@@ -14,7 +14,7 @@ const ticketesSchema = new mongoose.Schema({
     },
     user_email: {
         type: String,
-        required: true,
+        // required: true,
     },
     },{timestamps: true});
 

@@ -7,7 +7,7 @@ const router = express.Router();
 router.post('/creating', createTickets);
 router.get('/all', findAllTickets);
 router.get('/getId/:id', findOneTickect);
-router.post('/delete/:id', ticketsDelete);
+router.delete('/delete/:id', ticketsDelete);
 
 
 
