@@ -40,6 +40,29 @@ const  findOneTickect = async (req, res, next) => {
     }
  }
 
+//  Delete one ticket by Id
+const ticketsDelete = async (req, res, next) => {
+  try {
+    const ticketDelete = await Ticket.findByIdAndDelete(req.params.id);
+    if (!ticketDelete) {
+      return res.status(404).send({
+        success: false,
+        message: "Ticket not found"
+      });
+    }
+    return res.status(200).send({
+      success: true,
+      message: "Ticket deleted successfully"
+    });
+  } catch (error) {
+    res.status(500).send({
+      success: false,
+      message: error.message || "Invalid Ticket request"
+    });
+    next(error);
+  }
+};
+
 
 // adding an export method
-module.exports = { createTickets, findAllTickets , findOneTickect};
+module.exports = { createTickets, findAllTickets , findOneTickect , ticketsDelete};

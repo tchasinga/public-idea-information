@@ -1,4 +1,4 @@
-const {createTickets , findAllTickets , findOneTickect} = require('../controller/tickets.controller.js');
+const {createTickets , findAllTickets , findOneTickect , ticketsDelete} = require('../controller/tickets.controller.js');
 
 const express = require('express');
 const router = express.Router();
@@ -7,6 +7,8 @@ const router = express.Router();
 router.post('/creating', createTickets);
 router.get('/all', findAllTickets);
 router.get('/getId/:id', findOneTickect);
+router.post('/delete/:id', ticketsDelete);
+
 
 
 module.exports = router;
